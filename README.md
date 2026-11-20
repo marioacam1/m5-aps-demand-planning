@@ -4,10 +4,6 @@
 **Aplicación en línea:** https://m5-aps-demand-planning.streamlit.app/
 **Repositorio:** https://github.com/marioacam1/m5-aps-demand-planning
 
-> Plataforma de planeación de la demanda tipo APS (*Advanced Planning System*) construida de punta a punta sobre el dataset **M5 Forecasting de Walmart**: pipeline Medallion en Databricks, modelo de pronóstico probabilístico publicado como API y una aplicación web pública que lo consume.
->
-> Nota: la primera carga de la aplicación puede tardar de 1 a 2 minutos porque el endpoint de Databricks escala a cero cuando está inactivo. Si la app muestra "This app has gone to sleep", basta pulsar el botón para despertarla.
-
 ---
 
 ## 1. Resumen y cómo se cubre la rúbrica
