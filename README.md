@@ -140,7 +140,6 @@ La limpieza se hace en el notebook `02b_silver_clean` y produce la tabla `sales_
 
 - **ABC** por Pareto de ingreso: A = primer 80 % acumulado, B = siguiente 15 %, C = el resto.
 - **XYZ** por coeficiente de variación de las ventas semanales: X < 0.25, Y entre 0.25 y 0.50, Z > 0.50.
-- Además, la clase de demanda (Smooth, Erratic, Intermittent, Lumpy) usa los umbrales de Syntetos-Boylan (ADI 1.32, CV² 0.49).
 
 ---
 
@@ -149,10 +148,6 @@ La limpieza se hace en el notebook `02b_silver_clean` y produce la tabla `sales_
 - **Horizonte y frecuencia:** demanda semanal, 13 semanas hacia adelante.
 - **Pronóstico probabilístico:** modelos **HistGradientBoosting** de cuantiles, entrenados sobre series normalizadas, que predicen la media y los cuantiles **P10 / P50 / P90**. P10 es el "Low case" y P90 el "High case"; el rango entre ambos debe contener la demanda cerca del 80 % de las semanas.
 - **Modelos separados** para la jerarquía y para los SKUs, más un modelo de la media (versión `aps_core` 1.3).
-- **Calibración conforme:** el rango sin calibrar cubría menos de lo prometido; se ajusta con datos de calibración para acercar la cobertura real al 80 %.
-- **Backtesting:** 5 ventanas móviles de fechas de corte; en cada una se pronostica y se compara con lo ocurrido. Las tablas resultantes (`accuracy_*.csv`, `backtest_hierarchy.csv.gz`) alimentan la pestaña KPIs.
-- **Coherencia jerárquica:** la app concilia las series de la jerarquía con **MinT** para que las partes sumen el total.
-- **Seguimiento:** parámetros, métricas y artefactos en MLflow.
 
 ---
 
