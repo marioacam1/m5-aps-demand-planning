@@ -210,18 +210,6 @@ Construida con Streamlit y desplegada en Streamlit Community Cloud. Al abrirse, 
 | **Data & Audit** | Importación y validación de CSV/Excel, log de auditoría y versiones congeladas |
 | **Acerca de** | Arquitectura, metodología y limitaciones (en español) |
 
-### Integración con el endpoint
-
-| Aspecto | Implementación |
-|---|---|
-| Timeouts | 20 s para conectar y 90 s para leer la respuesta |
-| Reintentos | Hasta 4 intentos con esperas de 3, 6 y 12 s ante timeout, error de conexión, 408/425/429 y 5xx |
-| Sin reintento | Errores 400, 401, 403 y 404, que se muestran con un mensaje claro |
-| Respuestas inválidas | Cada respuesta se valida: campos obligatorios, longitudes, números finitos y no negativos, cuantiles ordenados y fechas |
-| Lotes | Máximo 200 series por petición; la app parte las consultas grandes |
-| Antirrebote | Pausa de 2 s entre ejecuciones manuales |
-| Seguridad | El token de acceso vive solo en los *Secrets* de Streamlit; no está en el código ni en este repositorio |
-
 ---
 
 ## 9. Cómo ejecutarlo en local
